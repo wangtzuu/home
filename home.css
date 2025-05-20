@@ -1,0 +1,537 @@
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fixed Background for all screens */
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling during animations */
+    line-height: 1.6;
+    background-color: #b1afc0; /* Default background color for the entire page */
+}
+
+/* Container for consistent padding on all sections */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Full-width sections */
+.full-width-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+/* Header and Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(107, 5, 5);
+    padding: 15px 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    position: relative;
+    width: 100%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav a.active {
+    color: rgb(204, 102, 7);
+}
+
+nav a:hover {
+    color: rgb(255, 196, 145);
+}
+
+/* Auth Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.auth-buttons button {
+    padding: 8px 15px;
+    border: 1px solid #888;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.auth-buttons button:hover {
+    background-color: #726868;
+    color: white;
+}
+
+/* Fixed banner background for all screen sizes */
+.banner {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #444;
+    overflow: hidden; /* Keep overflow hidden to prevent scrollbars */
+}
+
+.banner-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+.banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+/* Button Styles */
+.btn-link {
+    padding: 10px 20px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-link:hover {
+    background-color: rgb(87, 8, 8);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Search Bar Styles */
+.search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: #bc3a3a;
+    position: relative;
+    z-index: 1;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 12px 20px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.search-bar input {
+    border: none;
+    flex-grow: 1;
+    margin-left: 10px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-icon {
+    color: #666;
+    flex-shrink: 0;
+}
+
+/* Recommended Books Section Styles */
+.recommended-section {
+    background-color: #b1afc0;
+    padding: 50px 0;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.section-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.section-title {
+    color: rgb(253, 247, 247);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: bolder;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.book-card {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.book-cover {
+    width: 130px;
+    height: 190px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover .book-cover {
+    transform: scale(1.05);
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+.book-author {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Page Transition Styles */
+main {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-color: #b1afc0;
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    background-color: #b1afc0;
+}
+
+#home-page {
+    transform: translateX(0);
+}
+
+#recommended-page {
+    transform: translateX(100%);
+}
+
+.slide-left {
+    transform: translateX(-40%) !important;
+}
+
+.slide-center {
+    transform: translateX(0) !important;
+}
+
+.slide-right {
+    transform: translateX(100%) !important;
+}
+
+/* Desktop specific styles */
+@media screen and (min-width: 993px) {
+    .banner {
+        height: 90vh; /* Taller on desktop */
+    }
+    
+    .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 1200px) {
+    .books-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .banner {
+        height: 60vh;
+    }
+    
+    header {
+        padding: 15px 20px;
+    }
+    
+    nav ul {
+        gap: 20px;
+    }
+    
+    .books-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 20px;
+    }
+    
+    .book-cover {
+        width: 120px;
+        height: 170px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+    
+    .logo-container {
+        flex: 0 0 auto;
+    }
+    
+    nav {
+        order: 3;
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    nav ul {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .auth-buttons {
+        flex: 1;
+        justify-content: flex-end;
+    }
+    
+    .banner {
+        height: 50vh;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    .books-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+    }
+    
+    .book-cover {
+        width: 110px;
+        height: 160px;
+    }
+    
+    .book-card {
+        padding: 15px;
+    }
+    
+    .search-bar {
+        width: 80%;
+        padding: 10px 15px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .logo-container {
+        margin-bottom: 15px;
+        justify-content: center;
+    }
+    
+    .auth-buttons {
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+        order: 2;
+    }
+    
+    nav {
+        order: 1;
+        width: 100%;
+        margin-top: 0;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        row-gap: 10px;
+        column-gap: 15px;
+    }
+    
+    .banner {
+        height: 40vh;
+    }
+    
+    .search-bar {
+        width: 90%;
+        max-width: none;
+    }
+    
+    .search-bar input {
+        font-size: 14px;
+    }
+    
+    .books-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 12px;
+    }
+    
+    .book-cover {
+        width: 100px;
+        height: 150px;
+    }
+    
+    .book-title {
+        font-size: 13px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .recommended-section {
+        padding: 30px 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    nav ul {
+        gap: 10px;
+    }
+    
+    .books-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        gap: 10px;
+    }
+    
+    .book-cover {
+        width: 90px;
+        height: 130px;
+    }
+    
+    .book-card {
+        padding: 10px;
+    }
+    
+    .book-title {
+        font-size: 12px;
+    }
+    
+    .auth-buttons {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    
+    .auth-buttons button {
+        width: 100%;
+    }
+}
